@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="#" onsubmit="vali()">
+Memember number<br>
+<input type="text" id="member" placeholder="Numbers only"></input><br>
+Password<br>
+<input type="password" id="pass" minlength="4"></input> <br>Password must be more than 4 Characters<br><br>
+<input type="submit" value="Submit">
+<p id="demo"></p>
+<p id="demos"></p>
+</form>
+
+
+<script>
+function valimemnum(){
+    var memnum = document.getElementById("member").value;
+    if(isNaN(memnum) || memnum.length == 0){
+        alert("Error!")
+        curs = document.getElementById("member")
+        curs.setSelectionRange(0,0)
+        curs.focus()
+    }else{
+        document.getElementById("demo").innerHTML = "Member Number is correct!";
+    }
+}
+function valipass(){
+    var pass = document.getElementById("pass").value;
+    if(pass.length == 0){
+        alert("Error!")
+        cur = document.getElementById("pass")
+        cur.setSelectionRange(0,0)
+        cur.focus()
+    }else{
+        document.getElementById("demos").innerHTML = "Password is correct!";
+    }
+}
+function vali(){
+    valimemnum();
+    valipass();
+}
+
+</script>
+
+</body>
+</html>
